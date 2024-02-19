@@ -1,0 +1,94 @@
+---
+import TailwindIcon from "../components/icons/Tailwind.astro";
+import ReactIcon from "../components/icons/React.astro";
+import NextjsIcon from "../components/icons/Nextjs.astro";
+import FirebaseIcon from "../components/icons/Firebase.astro";
+import ProjectItem from "./ProjectItem.astro";
+import AngularIcon from "./icons/Angular.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+
+const TAGS = {
+  TAILWIND: {
+    name: "Tailwind",
+    class: "text-[#73bcf6] bg-[#003159]",
+    icon: TailwindIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "text-white bg-[#0b57d0]",
+    icon: ReactIcon,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "text-white bg-[#1e88e5]",
+    icon: FirebaseIcon,
+  },
+  NEXTJS: {
+    name: "NextJS",
+    class: "text-white bg-blue-500",
+    icon: NextjsIcon,
+  },
+  ASTROJS: {
+    name: "Astro",
+    class: "bg-white text-black",
+    icon: AstroIcon,
+  },
+  ANGULARJS: {
+    name: "AngularJS",
+    class: "text-white bg-[#dd1b16] ",
+    icon: AngularIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Notesbook",
+    description:
+      "Aplicación web que guarda tus notas en la nube, para que puedas acceder a ellas desde cualquier dispositivo. Cuenta con un sistema de autenticación y un editor de texto personalizado. Realizada con React y Firebase.",
+    image: "notebook-mockup.jpg",
+    linkSite: "https://notesbook.vercel.app/",
+    linkRepository: "https://github.com/JfloresXc/notesbook",
+    tags: [TAGS.REACT, TAGS.FIREBASE],
+  },
+  {
+    title: "Comedor Untels",
+    description:
+      "Aplicación web para el comedor de la Universidad Nacional Tecnológica de Lima Sur. Cuenta con un sistema de autenticación, un sistema de platillos y armado de menúes. Realizada con AngularJS y Firebase.",
+    image: "comedoruntels-mockup.jpg",
+    linkSite: "https://comedoruntels.vercel.app/",
+    linkRepository: "https://github.com/JfloresXc/comedor-untels",
+    tags: [TAGS.ANGULARJS, TAGS.FIREBASE],
+  },
+  {
+    title: "Centro Idiomas",
+    description:
+      "Landing Page para un centro de idiomas, realizada de antemano por un diseño en Figma. Cuenta con un formulario de contacto y Lazy Loading para las imágenes. Realizada con React y un Design System.",
+    image: "centroidiomas-mockup.jpg",
+    linkSite: "https://centro-idiomas.vercel.app/",
+    linkRepository: "https://github.com/JfloresXc/centro-idiomas",
+    tags: [TAGS.REACT],
+  },
+];
+---
+
+{
+  PROJECTS.map(
+    ({
+      title,
+      description,
+      image,
+      linkSite,
+      linkRepository,
+      tags,
+    }) => (
+      <ProjectItem
+        title={title}
+        description={description}
+        image={"storage/projects/" + image}
+        linkSite={linkSite}
+        linkRepository={linkRepository}
+        tags={tags}
+      />
+    )
+  )
+}

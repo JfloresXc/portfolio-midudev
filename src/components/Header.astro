@@ -1,0 +1,85 @@
+---
+import Brand from "./Brand.astro";
+---
+
+<header
+  class="w-full sticky lg:relative top-0 dark:text-white lg:px-5 lg:py-2 lg:pt-12 mb-20 z-50"
+>
+  <nav
+    class="hidden lg:flex
+    flex-wrap flex-row justify-center gap-x-10 gap-y-5
+    w-full"
+  >
+    <a href="/" class="hover:text-gray-600 dark:hover:text-gray-400"
+      >Inicio</a
+    >
+    <a
+      href="#experiencia"
+      class="hover:text-gray-600 dark:hover:text-gray-400"
+      >Experiencia</a
+    >
+    <a
+      href="#proyectos"
+      class="hover:text-gray-600 dark:hover:text-gray-400"
+      >Proyectos</a
+    >
+    <a
+      href="/#sobremi"
+      class="hover:text-gray-600 dark:hover:text-gray-400">Sobre mí</a
+    >
+  </nav>
+  <nav class="flex lg:hidden shadow-md">
+    <div
+      class="flex w-full items-center justify-between p-3 px-4 bg-yellow-300"
+    >
+      <span class="text-white font-bold text-2xl flex gap-x-2">
+        <Brand />
+        JfloresXc
+      </span>
+      <button
+        class="flex items-center px-3 py-2 mt-3 border border-white rounded-md hover:text-gray-200 hover:border-gray-200"
+        id="menu-button"
+      >
+        <svg
+          class="h-3 w-3 fill-current text-white hover:text-gray-200"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+        >
+          <title>Menu</title>
+          <path
+            d="M0 0h20v2H0V0zm0 5h20v2H0V5zm0 5h20v2H0v-2zm0 5h20v2H0v-2z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div
+      class="absolute hidden top-16 outline-none border-none left-0 w-full"
+      id="menu"
+    >
+      <ul
+        class="p-5 bg-gray-100 font-medium text-primary text-sm flex flex-col gap-y-3"
+      >
+        <a href="/" class="py-1 hover:text-gray-400">Inicio</a>
+        <a href="#experiencia" class="block py-1 hover:text-gray-400"
+          >Experiencia</a
+        >
+        <a href="#proyectos" class="block py-1 hover:text-gray-400"
+          >Proyectos</a
+        >
+        <a href="#contacto" class="block py-1 hover:text-gray-400"
+          >Contacto</a
+        >
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  const menuButton = document.getElementById("menu-button");
+  const menu = document.getElementById("menu");
+
+  menuButton.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>

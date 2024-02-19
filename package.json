@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-result-curse",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/fira-code": "^5.0.16",
+    "@fontsource-variable/onest": "^5.0.2",
+    "@fontsource/ubuntu": "^5.0.8",
+    "astro": "^4.2.6",
+    "tailwindcss": "^3.4.1"
+  }
+}
